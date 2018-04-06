@@ -1,0 +1,28 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Users, Mode=OneWay}" AutoGenerateColumns="False" Name="UserDataGrid" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name of the Process" Binding="{Binding NameOfProcess}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last name" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding DateOfBirth}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}"></DataGridTextColumn>
+                <DataGridTextColumn Header="IsAdult" Binding="{Binding IsAdult}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="SunSign" Binding="{Binding SunSign}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="ChineseSign" Binding="{Binding ChineseSign}"  IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="IsBirthday" Binding="{Binding IsBirthday }" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
